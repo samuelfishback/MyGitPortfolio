@@ -169,11 +169,6 @@ body {
   translate: -50%;
 }
 
-#utensilicious {
-  height: 80vh;
-  border: 0.2rem solid gray;
-}
-
 #contactContainer {
   display: block;
   margin-top: 6rem;
