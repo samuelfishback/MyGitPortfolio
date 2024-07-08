@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      :root {
+        font-size: 67.5%;
+        font-family: Interstate, "Lucida Grande", "Lucida Sans Unicode",
+          "Lucida Sans", Garuda, Verdana, Tahoma, sans-serif;
+      }
+      body {
+        background-color: #628475;
+      }
+      h1 {
+        color: #ededed;
+        letter-spacing: 0.2rem;
+        margin-bottom: 0;
+      }
+      select {
+        margin: 0.5rem 0 1rem 0;
+        max-width: -webkit-fill-available;
+      }
+      p {
+        text-indent: -2rem;
+        padding: 0 1rem 0 3rem;
+        color: #666666;
+      }
+      .legal-eagle {
+        color: #ce4760;
+      }
+      .mark-rober {
+        color: #1f80c0;
+      }
+      .colin-furze {
+        color: rgb(167, 34, 167);
+      }
+      svg {
+        vertical-align: top;
+        fill: #333;
+        /*border: 1px solid black;*/
+      }
+      div#transcriptionTypeBox {
+        display: flex;
+        background-color: #efc6b4;
+        width: fit-content;
+        border-radius: 2px;
+      }
+      h2.transcription-type {
+        margin: 0 4vw;
+        color: #333;
+      }
+
+      #verbatim:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      #verbatimText {
+        max-height: 0;
+        overflow: hidden;
+        background-color: #fdf2e0;
+        transition: max-height 1s ease-in-out;
+      }
+      #verbatimText.full {
+        max-height: 61vh;
+        overflow: scroll;
+        background-color: #fdf2e0;
+        transition: max-height 1s ease-in-out;
+      }
+
+      #verbatimTriangle {
+        transform: rotate(0deg);
+        transform-origin: center;
+        transition: all 1s ease-in-out;
+      }
+      #verbatimTriangle.full {
+        transform: rotate(180deg);
+        transform-origin: center;
+        transition: all 1s ease-in-out;
+      }
+
+      #nonVerbatim:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      #nonVerbatimText {
+        max-height: 0;
+        overflow: hidden;
+        background-color: #fdf2e0;
+        transition: max-height 1s ease-in-out;
+      }
+      #nonVerbatimText.full {
+        max-height: 61vh;
+        overflow: scroll;
+        background-color: #fdf2e0;
+        transition: max-height 1s ease-in-out;
+      }
+
+      #nonVerbatimTriangle {
+        transform: rotate(0deg);
+        transform-origin: center;
+        transition: all 1s ease-in-out;
+      }
+      #nonVerbatimTriangle.full {
+        transform: rotate(180deg);
+        transform-origin: center;
+        transition: all 1s ease-in-out;
+      }
+    </style>
+    <title>Life in Prison for a Glitter Bomb?! (ft. Mark Rober)</title>
+  </head>
+  <body>
+    <iframe
+      width="100%"
+      height="121"
+      scrolling="no"
+      frameborder="no"
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1210470688&color=%23ff5500&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false"
+    >
+    </iframe>
+    <div
+      style="
+        font-size: 10px;
+        color: #cccccc;
+        line-break: anywhere;
+        word-break: normal;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        font-family: Interstate, Lucida Grande, Lucida Sans Unicode, Lucida Sans,
+          Garuda, Verdana, Tahoma, sans-serif;
+        font-weight: 100;
+      "
+    >
+      <a
+        href="https://soundcloud.com/user-187193974"
+        title="canibalstalker"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+      >
+      </a>
+      <a
+        href="https://soundcloud.com/user-187193974/life-in-prison-for-a-glitter-bomb-ft-mark-rober"
+        title="Life in Prison For a Glitter Bomb?! (ft. Mark Rober)"
+        target="_blank"
+        style="color: #cccccc; text-decoration: none"
+      >
+        Life in Prison For a Glitter Bomb?! (ft. Mark Rober)
+      </a>
+    </div>
+
+    <h1>Transcription:</h1>
+    <select name="transcript" disabled>
+      <option value="legal-eagle-mark-rober" selected>
+        Legal Eagle: "Life in Prison For a Glitter Bomb?! (ft. Mark Rober)"
+      </option>
+    </select>
+    <div id="transcriptionTypeBox">
+      <h2 class="transcription-type">
+        <span id="verbatim">Verbatim</span>
+        <svg height="26" width="20">
+          <polygon points="10,5 4,17 16,17" id="verbatimTriangle" />
+          ^
+        </svg>
+      </h2>
+      <h2 class="transcription-type">
+        <span id="nonVerbatim">Non-Verbatim</span>
+        <svg height="26" width="20">
+          <polygon points="10,5 4,17 16,17" id="nonVerbatimTriangle" />
+          ^
+        </svg>
+      </h2>
+    </div>
+
+    <div id="verbatimText">
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Alright. Thee- the man
+        himself, Mark Rober. Uh, thanks so much for, uh, for joining today.
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Good to be here. Let's
+        get to the bottom of this.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Out of curiosity, at
+        this point, how much glitter and fart spray do you think you've gone
+        through?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Like in- like w-what
+        metric? By- by pounds or by, like, number of boxes?
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Well, I mean, uh, you
+        know, you're a NASA engineer, so, uh, you know, gr-kilograms, probably
+        more than pounds.
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: (laughs) We gotta stick
+        with freedom units.
+      </p>
+      <p><strong class="legal-eagle">Legal Eagle</strong>: (laughs)</p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: We're talking probably,
+        like, 44 pounds of glitter. So, that's like 20 kilograms, give or take
+        of- uh, don't quote me on that -ish, uh, kilograms of glitter. And I
+        would say, probably, we've gotten, like, 50 boxes stolen or somethin'.
+      </p>
+      <p><strong class="legal-eagle">Legal Eagle</strong>: Wow.</p>
+      <p><strong class="mark-rober">Mark Rober</strong>: At this point.</p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: And I know that you've
+        gotten law enforcement involved; both in the porch thieves and on
+        tracking down some honest-to-goodness scammers who were taking advantage
+        of, uh, you know, sometimes the elderly. Um. Has anything come from
+        that, uh, coordination with law enforcement?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: So, (clears throat)
+        we've literally had, like, Department of Justice, like, FBI, Homeland
+        Security, Scottland Yard, INTERPOL, like, all of them at some point, in
+        some capacity have reached out, um, including, like, I think it was,
+        like, Microsoft's fraud team, like, companies as well. We will just give
+        them our information and we'll just, like, "Here you go, do with it what
+        you want." They generally don't follow back with us and-and say what
+        happened, for whatever reason. It's not necessarily a two-way street. If
+        we're looking for, like- with like, local jurisdiction, like this year
+        (swallows) we're gonna work with San Francisco PD and-and, kind of
+        tackle the car- uh, people smashing and grabbing, uh, cars and, like,
+        stuff from cars. So, if we're working more like that, then-then there's
+        more back-and-forth but otherwise, uh, we just kind of, just, give 'em
+        all the data and let them do with it what they will. They have told us
+        they like what we're doing. A: because it's like we do stuff technically
+        that they just won't, for what- don't have the resources or ability to
+        do it in their department. But B: we can get away with stuff that they
+        can't do because we're, like, private citizens, I guess. But, somehow
+        they could use that information so it's, like, in certain cases they'll
+        be like, "no, we love what you're doin', please keep doin' it," for
+        whatever reason they're either legally or constrained from a resource
+        standpoint- can't do it, so they love when we f-feed 'em whatever we
+        get.
+      </p>
+      <!--2:20-->
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Yeah. Well, I mean,
+        that's- that's a great example, uh, y-you know, the police are bound by
+        the Constitution. Uh.
+      </p>
+      <p><strong class="mark-rober">Mark Rober</strong>: Pfft! Lame!</p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: (laughs) Yeah,
+        theoretically. Theoretically, they should be bound by the Constitution
+        and, you know, you get people saying, "Oh, that infringes on my First
+        Amendment rights," when it doesn't actually involve the government and
+        the First Amendment doesn't apply to anything but the government. You
+        are a private citizen so there are- there are rules that, um, define
+        what the government can do with information that's created by private
+        citizens. Mark, I noticed that a lot of the people in your videos, uh,
+        have blurred faces. Uh, is there a particular reason why- why you do
+        that?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Uh, we might as well
+        just state it on your channel. I put this in descriptions sometimes.
+      </p>
+      <p><strong class="legal-eagle">Legal Eagle</strong>: Sure.</p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: But basically, if
+        someone doesn't sign a release, I don't- their face is then blurred and,
+        uh, I don't wanna ruin anyone's life over, like, a stupid decision to,
+        like, steal a package. So, by default, faces are blurred. If you see a
+        face that's not blurred that's because they signed a release and we went
+        back later and said, "Hey, uh, will you sign a release so I could put
+        this in a dumb video?" And, uh, and they've signed it.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Are you able to- to
+        prevent future, uh, package thieves?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: It's kind of a
+        case-by-case basis. There's one two years ago, these two college
+        students took it and, uh, uh, they were hilarious. I didn't end up
+        turning their f-footage to the police or anything but then Discover
+        Channel- we're doing something. So, then Discover Channel tracked them
+        down and then I interviewed them. And I was like, I asked them, like,
+        "So, have you guys stolen any packages since?" And they're, like, "Ah
+        man, I got in so much trouble from my mom and my grandma," and then
+        they're like, you know, someone else- a package came to their house
+        accidentally, just shipped to the wrong address and he's like, "I
+        frickin' personally walked that thing to Georgia where it, you know,
+        where- where it actually was supposed to delivered to," cause it's like,
+        "I didn't want anything to do with it." He was like, "I was gonna go
+        through hell or high water to make sure it got to the right person." So
+        I was like, "Ah, well, my job is done here." You know? I think they
+        learned their lesson.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Well, uh, Mark it- if
+        Batman had a YouTube channel, I think he would aspire to- to do exactly
+        what you're doing. Um, I-I think you're doin' really good work. Uh, my
+        final question for you is: If Mark Rober found himself in jail, how
+        would he engineer his way out of imprisonment?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: (laughs) Ah, man.
+        That's- I mean, what kinda jail is it? I gotta know, like, what the
+        weaknesses are, right? And I- a- it- it usually, I think, those things
+        come down to a little bit of, like, combination of social engineering.
+        You kinda gotta observe, know when the guards gone rest, make friends
+        with the guard, you know? Depends on how long the jail sentence was
+        because, also, I'm not gonna, like, break out if that gives me, like, 20
+        more years. So, you gotta balance it all. But, uh, yeah.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Let's say you're
+        wrongfully imprisoned for life. You are a completely innocent man but
+        you have no hope of parole and you're in- you're in Alcatraz. How does
+        Mark Rober "Mark Rober" his way out of Alcatraz?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: (deep breath) Yeah, I'm
+        goin' to El Chapo, baby. I'm digging a tunnel.
+      </p>
+      <p><strong class="legal-eagle">Legal Eagle</strong>: (laughs)</p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: That's- I'll invent a
+        machine that's, like, the fastest digging tunnel machine and that's how
+        I'm gettin' out, I think. I'm callin' it right now.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Maybe there's a
+        colaboration with Colin Furze and, uh- and digging his tunnel.
+      </p>
+      <p><strong class="mark-rober">Mark Rober</strong>: Dah! (laughs)</p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Digging the tunnel out
+        of, uh- of jail.
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Good point. I feel like
+        I've- I'm on Colin's grass here on this one. Alright, well if I get one
+        call- phone call from jail, you know who it's going to now, sorry Mom,
+        I'm callin' Colin.
+      </p>
+      <p>
+        <strong class="colin-furze">Colin Furze</strong> (clip from Colin's
+        video): Ohohoho! You've got a lot of tidyin' up to do here, Furze. You
+        got a lot of tidyin' up!
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Alright, well thanks for
+        the call and by the way, thanks for, uh, bein' a lawyer and, uh, you
+        making me sleep a little bit better at night. Sometimes it's a little
+        sketchy with these things, so knowing a lawyer of your caliber has
+        looked at this and-and cleared my name, uh, means I can rest a little
+        easier and there's a higher probability we'll do Glitterbomb 5.0 and 6
+        and 7 and who knows where we'll be at when we get to Glitterbomb 10.0
+        but.... Now, if I ever get sued, uh, I'm sendin' 'em your way. You-
+        you're my representation at this point, so thank you.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Thanks so much for
+        joining, Mark. I'll send you my engagement letter and you can send me a
+        retainer.
+      </p>
+    </div>
+    <!----------------------------NONVERBATIM------------------------------------->
+    <div id="nonVerbatimText">
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Alright. The man
+        himself, Mark Rober. Thanks so much for joining today.
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Good to be here. Let's
+        get to the bottom of this.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Out of curiosity, at
+        this point, how much glitter and fart spray do you think you've gone
+        through?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Like in what metric? By
+        pounds or by number of boxes?
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Well, you're a NASA
+        engineer, so kilograms probably more than pounds.
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: (laughs) We gotta stick
+        with freedom units.
+      </p>
+      <p><strong class="legal-eagle">Legal Eagle</strong>: (laughs)</p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: We're talking probably
+        44 pounds of glitter. So, that's like 20 kilograms, give or take. Don't
+        quote me on that. And I would say, probably, we've gotten 50 boxes
+        stolen or something, at this point.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: And I know that you've
+        gotten law enforcement involved; both in the porch theives and on
+        tracking down some honest-to-goodness scammers who were taking advantage
+        of, sometimes, the elderly. Has anything come from that coordination
+        with law enforcement?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: So, we've literally had
+        Department of Justice, FBI, Homeland Security, Scottland Yard, INTERPOL,
+        all of them at some point, in some capacity, have reached out, including
+        Microsoft's fraud team; companies as well. We will just give them our
+        information and we'll just, "Here you go, do with it what you want."
+        They generally don't follow back with us and say what happened, for
+        whatever reason. It's not necessarily a two-way street. If we're looking
+        for- with local jurisdiction-- Like, this year we're going to work with
+        San Fransisco PD and tackle the car- people smashing and grabbing cars
+        and stuff from cars. So, if we're working more like that, then there's
+        more back-and-forth but otherwise, we just give them all the data and
+        let them do with it what they will.
+        <br />
+        They have told us they like what we're doing. A: because we do stuff,
+        technically, that they just don't have the resources or ability to do it
+        in their department but B: we can get away with stuff that they can't do
+        because we're private citizens, I guess. But, somehow they could use
+        that information. In certain cases, they'll be like, "no, we love what
+        you're doing, please keep doing it." For whatever reason they're either
+        legally or constrained from a resource standpoint and can't do it, so
+        they love when we feed them whatever we get.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Well, that's a great
+        example. The police are bound by the Constitution.
+      </p>
+      <p><strong class="mark-rober">Mark Rober</strong>t: Pfft! Lame!</p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: (laughs) Yeah,
+        theoretically. Theoretically, they should be bound by the Constitution
+        and you get people saying, "Oh, that infringes on my First Amendment
+        rights," when it doesn't actually involve the government and the First
+        Amendment doesn't apply to anything but the government. You are a
+        private citizen so there are rules that define what the government can
+        do with information that's created by private citizens. Mark, I noticed
+        that a lot of people in your videos have blurred faces. Is there a
+        particular reason why you do that?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: We might as well just
+        state it on your channel. I put this in descriptions sometimes. But
+        basically, if someone doesn't signa release, their face is then blurred
+        and I don't want to ruin anyone's life over a stupid decision to steal a
+        package. So, by default, faces are blurred. If you see a face that's not
+        blurred, that's because they signed a release and we went back later and
+        said, "Hey, will you sign a release so I could put this in a dumb
+        video?" And they've signed it.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Are you able to
+        prevent future package thieves?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: It's kind of a
+        case-by-case basis. There's one two years ago, these two college
+        students took it and they were hilarious. I didn't end up turning their
+        footage to the police or anything but then Discover Channel tracked them
+        down and then I interviewed them. And I asked them, "So have you guys
+        stolen any packages since?" And they're like, "Ah man, I got in so much
+        trouble from my mom and my grandma." And then they're like, a package
+        came to their house accidentally, just shipped to the wrong address and
+        he's like, "I frickin' personally walked that thing to Georgia where it
+        actually was supposed to deliver to. I didn't want anything to do with
+        it." He was like, "I was going to go through hell or high water to make
+        sure it got to the right person." So I was like, "Ah, well, my job is
+        done here." I think they learned their lesson.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Well, Mark, if Batman
+        had a YouTube channel, I think he would aspire to do exactly what you're
+        doing. I think you're doing really good work. My final question for you
+        is: If Mark Rober found himself in jail, how would he engineer his way
+        out of imprisonment?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: (laughs) Ah, man. What
+        kind of jail is it? I got to know what the weaknesses are, right? And it
+        usually, I think, those things come down to a little bit of a
+        combination of social engineering. You kind of got to observe, know when
+        the guards gone rest, make friends with the guard, you know? Depends on
+        how long the jail sentence was because, also, I'm not going to break out
+        if that gives me 20 more years. So, you got to balance it all.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Let's say you're
+        wrongfully imprisoned for life. You are a completely innocent man but
+        you have no hope of parole and you're in Alcatraz. How does Mark Rober
+        "Mark Rober" his way out of Alcatraz?
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Yeah, I'm going to El
+        Chapo, baby. I'm digging a tunnel.
+      </p>
+      <p><strong class="legal-eagle">Legal Eagle</strong>: (laughs)</p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: I'll invent a machine
+        that's the fastest digging tunnel machine and that's how I'm getting
+        out, I think. I'm calling it right now.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Maybe there's a
+        colaboration with Colin Furze and digging his tunnel.
+      </p>
+      <p><strong class="mark-rober">Mark Rober</strong>: (laughs)</p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Digging the tunnel out
+        of jail.
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Good point. I feel like
+        I'm on Colin's grass here on this one. Alright, well if I get one phone
+        call from jail, you know who it's going to now. Sorry Mom, I'm calling
+        Colin.
+      </p>
+      <p>
+        <strong class="colin-furze">Colin Furze</strong>: Oh! You've got a lot
+        of tidying up to do here, Furze. You got a lot of tidying up!
+      </p>
+      <p>
+        <strong class="mark-rober">Mark Rober</strong>: Alright, well, thanks
+        for the call and, by the way, thanks for being a lawyer and you making
+        me sleep a little bit better at night. Sometimes it's a little sketchy
+        with these things so knowing a lawyer of your caliber has looked at this
+        and cleared my name means I can rest a little easier and there's a
+        higher probability we'll do Glitterbomb 5.0 and 6 and 7 and who know
+        where we'll be at when we get to Glitterbomb 10.0. Now, if I ever get
+        sued, I'm sending them your way. You're my representation at this point,
+        so thank you.
+      </p>
+      <p>
+        <strong class="legal-eagle">Legal Eagle</strong>: Thanks so much for
+        joining, Mark. I'll send you my engagement letter and you can send me a
+        retainer.
+      </p>
+    </div>
+    <script type="text/javascript">
+      const verbatim = document.getElementById("verbatim");
+      const nonVerbatim = document.getElementById("nonVerbatim");
+      const verbatimText = document.getElementById("verbatimText");
+      const verbatimTriangle = document.getElementById("verbatimTriangle");
+      const nonVerbatimText = document.getElementById("nonVerbatimText");
+      const nonVerbatimTriangle = document.getElementById(
+        "nonVerbatimTriangle"
+      );
+      verbatim.addEventListener("click", function () {
+        nonVerbatimText.classList.remove("full");
+        nonVerbatimTriangle.classList.remove("full");
+        verbatimText.classList.toggle("full");
+        verbatimTriangle.classList.toggle("full");
+      });
+      nonVerbatim.addEventListener("click", function () {
+        verbatimText.classList.remove("full");
+        verbatimTriangle.classList.remove("full");
+        nonVerbatimText.classList.toggle("full");
+        nonVerbatimTriangle.classList.toggle("full");
+      });
+    </script>
+  </body>
+</html>

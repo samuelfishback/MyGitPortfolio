@@ -1,0 +1,227 @@
+import platform from '../img/platform.png';
+console.log(platform);
+
+// desktop
+if (window.innerWidth > 940) {
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.imageSmoothingEnabled = false;
+  canvas.width = 768 //window.innerWidth;
+  canvas.height = 432 //0.995 * window.innerHeight;
+  
+  const gravity = 0.5;
+  function isPlusOrMinus() {
+      let x = Math.random();
+      if (x >= 0.5) {
+          return 1;
+      } else return -1;
+  }
+  // FIXME: image will not draw even with onload
+  /* function drawPlatform() {
+      const platformImage = new Image();
+      platformImage.src = './img/platform.png';
+      platformImage.onload = () => {
+        ctx.drawImage(platformImage, this.x, this.y, this.width, this.height);
+      }
+    } */
+  
+  class Player {
+      constructor() {
+          this.position = {
+              x: 100,
+              y: 100
+          };
+          this.width = 30;
+          this.height = 30 * 1.618 /* golden ratio */;
+          this.velocity = {
+              x: 0,
+              y: 1
+          };
+          this.isFacing = {
+              left: false,
+              neutral: true,
+              right: false
+          };
+      }
+  
+      draw() {
+          ctx.fillStyle = 'red';
+          ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+      }
+      update() {
+          this.draw();
+          this.position.x += this.velocity.x;
+          this.position.y += this.velocity.y;
+          if(this.position.y + this.height + this.velocity.y < canvas.height) {
+              this.velocity.y += gravity;
+          } else this.velocity.y = 0;
+      }
+  }
+  
+  class Platform {
+      constructor({x, y, image}) {
+          this.position = {
+              x: x + isPlusOrMinus() * Math.floor(Math.random() * 100),
+              y: y + isPlusOrMinus() * Math.floor(Math.random() * 50),
+          }
+          
+          this.image = image;
+          this.width = image.width + isPlusOrMinus() * Math.floor(Math.random() * 50);
+          this.height = image.height / (1.618 * 5);
+
+      }
+      
+      draw() {
+          // [line 20] drawPlatform();
+          ctx.drawImage(this.image, this.position.x, this.position.y);
+          /* This is basic, original platform
+          ctx.fillStyle = 'blue';
+          ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+          */
+      }
+  }
+
+  const image = new Image();
+  image.src = platform;
+
+  console.log(image);
+  
+  const player = new Player();
+  const platforms = [new Platform({
+    x: 300, y: 550, image}), 
+    new Platform({
+      x: 600, y: 550, image})];
+  
+  const keys = {
+      right: {
+          isPressed: false
+      },
+      left: {
+          isPressed: false
+      },
+      up: {
+          isPressed: false
+      },
+      down: {
+          isPressed: false
+      },
+      shift: {
+          isPressed: false
+      }
+  }
+  
+  // win condition
+  let scrollOffset = 0;
+  
+  function animate() {
+      requestAnimationFrame(animate);
+      ctx.fillStyle = 'white';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      player.update();
+      platforms.forEach(platform => {
+          platform.draw();
+      });
+      // in order to put player in front of platforms, place it here to be the last thing drawn.
+  
+      // player movement & borders
+      // player & background scroll
+      // TODO: change this to a vertical scroll rather than a horizontal one & change velocity back to 10
+      if (keys.right.isPressed && player.position.x < 400 /*player.width < canvas.width*/) {
+          player.velocity.x = 5;
+      } else if (keys.left.isPressed && player.position.x > 75 /*> 0*/) {
+          player.velocity.x = -5;
+      } else {
+          player.velocity.x = 0;
+  
+          if (keys.right.isPressed) {
+              scrollOffset += 5;
+              platforms.forEach(platform => {
+                  platform.position.x -= 5;
+              });
+          } else if (keys.left.isPressed) {
+              scrollOffset -= 5;
+              platforms.forEach(platform => {
+                  platform.position.x += 5;
+              });
+          }
+      }
+  
+      if (scrollOffset > 2000) {
+          console.log('YOU WIN!!!');
+      }
+      
+  
+      // platform collision detection
+      platforms.forEach(platform => {
+          if (player.position.y + player.height <= platform.position.y &&
+              player.position.y + player.height + player.velocity.y >= platform.position.y &&
+              player.position.x + player.width >= platform.position.x &&
+              player.position.x <= platform.position.x + platform.width) {
+                  player.velocity.y = 0;
+              // player lands well above platform and slowly lowers to 1px above.
+              // add decorative flora or stone to cover landings
+          }
+      });
+  }
+  
+  animate();
+  
+  window.addEventListener('keydown', ({keyCode}) => {
+      console.log(keyCode);
+      switch (true) {
+          case keyCode==65 || keyCode==37:
+              console.log('left');
+              keys.right.isPressed = false;
+              keys.left.isPressed = true;
+              break;
+          case keyCode==68 || keyCode==39:
+              console.log('right');
+              keys.left.isPressed = false;
+              keys.right.isPressed = true;
+              break;
+          case keyCode==87 || keyCode==38 || keyCode==32:
+              console.log('up');
+              keys.up.isPressed = true;
+              player.velocity.y = -15;
+              break;
+          case keyCode==83 || keyCode==40:
+              console.log('down');
+              keys.down.isPressed = true;
+              break;
+          case keyCode==16:
+              console.log('shift');
+              keys.shift.isPressed = true;
+              break;
+      }
+  });
+  window.addEventListener('keyup', ({keyCode}) => {
+      switch (true) {
+          case keyCode==65 || keyCode==37:
+              keys.left.isPressed = false;
+              break;
+          case keyCode==68 || keyCode==39:
+              keys.right.isPressed = false;
+              break;
+          case keyCode==87 || keyCode==38 || keyCode==32:
+              keys.up.isPressed = false;
+              break;
+          case keyCode==83 || keyCode==40:
+              keys.down.isPressed = false;
+              break;
+          case keyCode==16:
+              keys.shift.isPressed = false;
+              break;
+          }
+  });
+}
+// mobile
+
+if (window.innerWidth > 320 && window.innerWidth < 940) {
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.imageSmoothingEnabled = false;
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  ctx.lineWidth = 5;
+  ctx.strokeRect(0,0, canvas.width, canvas.height / 1.618);
+}

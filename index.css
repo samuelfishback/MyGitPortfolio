@@ -1,0 +1,133 @@
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #eef;
+  margin: 0;
+}
+
+header {
+  top: 0;
+  position: sticky;
+  padding: 0.2rem;
+  display: flex;
+  width: auto;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+}
+
+a:visited {
+  color: black;
+  text-decoration: underline;
+}
+
+.header-links {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  color: black;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-links span {
+  display: inline-block;
+  position: relative;
+}
+
+.header-links span::before {
+  content: "";
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  bottom: 0px;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+  transition: all 0.5s ease-in-out;
+}
+
+.header-links:hover span::before {
+  left: 50%;
+  right: 50%;
+  width: 0;
+}
+
+.icons {
+  text-decoration: none;
+  margin: 0.2rem 0.2rem 0 0.2rem;
+  display: flex;
+  align-items: flex-end;
+}
+
+.header-dropdown {
+  position: relative;
+  right: 20%;
+  display: inline-block;
+}
+
+.drop-content {
+  display: none;
+  position: absolute;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  min-width: 80pt;
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.header-dropdown:hover .drop-content {
+  display: block;
+}
+
+#leftHeader {
+  display: flex;
+  width: 49vw;
+  justify-content: space-between;
+}
+
+#rightHeader {
+  display: flex;
+  width: 49vw;
+  justify-content: flex-end;
+}
+
+#iconContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+#dropButton {
+  border: none;
+  color: black;
+  background-color: transparent;
+}
+
+#twitterFollow {
+  width: 16px;
+  height: 16px;
+  background-color: transparent;
+}
+
+@media screen and (max-width: 480px) {
+  .header-links {
+    font-size: 1.5rem;
+  }
+  .header-dropdown {
+    right: 10%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  #headerBuffer {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 44px;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
+}
