@@ -159,7 +159,7 @@ body {
 #projectsBlock {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 #frameContainer {
@@ -206,6 +206,9 @@ body {
 }
 
 @media screen and (min-width: 900px) {
+  .projects-images {
+    height: 30vh;
+  }
   #profilePic {
     margin-right: calc(100vw - 900px);
   }
