@@ -14,9 +14,12 @@ body {
   rotate: 180deg;
   background-color: #eef;
 }
+
+/* throws off the horizontal size of the page
 #contactSVG {
   transform: scaleX(1.5);
 }
+*/
 
 .projects-images {
   width: 30vw;
