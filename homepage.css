@@ -210,7 +210,7 @@ body {
 
 @media screen and (min-width: 900px) {
   .projects-images {
-    height: 30vh;
+    aspect-ratio: 2/3;
   }
   #profilePic {
     margin-right: calc(100vw - 900px);
