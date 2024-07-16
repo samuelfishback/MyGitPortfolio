@@ -1,0 +1,51 @@
+body {
+	height: 96.66vh;
+	background-image: linear-gradient(to bottom, #7db9e8, #1e5799);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+h1 {
+	padding-left: 5vw;
+	font-size: 3.5vw;
+	text-shadow: 0.1vw 0.1vw 5px #FFFFFF;
+				/*
+				 1px 1px 0 #DDDDDD,
+				 -1px 1px 0 #DDDDDD,
+				 1px -1px 0 #DDDDDD,
+				 -1px -1px 0 #DDDDDD;
+				*/
+}
+
+button {
+	font-size: 2vw;
+	border-radius: 5px;
+}
+
+button:hover {
+	background-color: #FFF;
+	box-shadow: 0 0 5px grey;
+}
+
+button:disabled {
+	pointer-events: none;
+}
+
+li {
+	text-align: center;
+	font-size: 2.5vw;
+	font-weight: bold;
+}
+
+ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+.flow-right {
+	display: flex;
+}
+
+.space-between {
+	padding: 2vw 10vw;
+}
