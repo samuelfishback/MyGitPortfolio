@@ -1,0 +1,228 @@
+:root{
+  --general-size:calc(var(--device-size)*0.05);
+}
+body{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:90vh;
+  background:#eee;
+}
+.all_around_centered{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#outerContainer{
+  width:80vw;
+  height:80vw;
+  background:#444;
+}
+@media 
+(orientation:landscape){
+  #outerContainer{
+    width:80vh;
+    height:80vh;
+  }
+}
+@media screen and
+(max-height:550px){
+  :root{--general-size:calc(var(--device-size)*0.03);}
+}
+#outerCircle{
+  width:98%;
+  height:98%;
+  border-radius:50%;
+  background:#ddd;
+}
+#innerCircle, #numberCircle{
+  width:95%;
+  height:95%;
+  border-radius:50%;
+  position:relative;
+  background:#444;
+}
+.cardinal_markings{
+ width:99%;
+ height:2%;
+ position:absolute;
+ background:#ddd;
+}
+.ordinal_markings{
+ width:98%;
+ height:1%;
+ position:absolute;
+ background:#ddd;
+}
+#mark12n6{
+  rotate:90deg;
+}
+#mark2n8{
+  rotate:-30deg;
+}
+#mark1n7{
+  rotate:-60deg;
+}
+#mark4n10{
+  rotate:30deg;
+}
+#mark5n11{
+  rotate:60deg;
+}
+.number_times{
+  width:49%;
+  position:absolute;
+  left:50%;
+  top:50%;
+  display:flex;
+  justify-content:right;
+  transform-origin:left;
+  translate: 0 -50%;
+  color:#ddd;
+}
+.number_times span{
+  display:block;
+  position:relative;
+  width:fit-content;
+}
+/* --clock-width set in js */
+.cardinal_numbers{
+  font-size:var(--general-size);
+}
+.ordinal_numbers{
+  font-size:calc(var(--device-size)*0.03);
+}
+#num1{
+  rotate:-60deg;
+}
+#num1 span{
+  rotate:60deg;
+}
+#num2{
+  rotate:-30deg;
+}
+#num2 span{
+  rotate:30deg;
+}
+#num4{
+  rotate:-330deg;
+}
+#num4 span{
+  rotate:330deg;
+}
+#num5{
+  rotate:-300deg;
+}
+#num5 span{
+  rotate:300deg;
+}
+#num6{
+  rotate:-270deg;
+}
+#num6 span{
+  rotate:270deg;
+  padding-bottom:3px;
+}
+#num7{
+  rotate:-240deg;
+}
+#num7 span{
+  rotate:240deg;
+}
+#num8{
+  rotate:-210deg;
+}
+#num8 span{
+  rotate:210deg;
+}
+#num9{
+  rotate:-180deg;
+}
+#num9 span{
+  rotate:180deg;
+}
+#num10{
+  rotate:-150deg;
+}
+#num10 span{
+  rotate:150deg;
+}
+#num11{
+  rotate:-120deg;
+}
+#num11 span{
+  rotate:120deg;
+}
+#num12{
+  rotate:-90deg;
+}
+#num12 span{
+  rotate:90deg;
+}
+.time_hands{
+  height:var(--general-size);
+  position:absolute;
+  left:50%;
+  top:50%;
+  translate:0 -50%;
+  transform-origin:left;
+  background:#ddd;
+}
+#timeHandsCenter{
+  width:var(--general-size);
+  border-radius:50%;
+  translate:-50% -50%;
+  background:#ddd;
+}
+
+#minuteHand{
+  width:calc(var(--general-size)*4);
+  rotate:-90deg;
+  background:none;
+}
+#hourHand{
+  width:calc(var(--general-size)*3);
+  rotate:-90deg;
+  background:none;
+}
+#secondHand{
+  width:calc(var(--general-size)*4.2);
+  height:calc(var(--general-size)*0.2);
+  border:1px solid #444;
+  rotate:-90deg;
+}
+#digitalContainer{
+  width:fit-content;
+  height:fit-content;
+  padding:calc(var(--general-size)/6)
+    calc(var(--general-size)/4);
+  background:#ddd;
+  position:absolute;
+  left:50%;
+  translate:-50% -50%;
+  top:50%;
+  border:1px solid #444;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+#digitalContainerInner{
+  width:fit-content;
+  height:fit-content;
+  background:#444;
+}
+.digital_times{
+  width:fit-content;
+  height:fit-content;
+  background:#444;
+  text-align:center;
+  font-size:calc(var(--device-size)*0.04);
+  color:lime;
+}
+/* is there a better way to write steps(1) */
+.digital_colon{
+  animation:blink 1s steps(1) infinite;
+}
+@keyframes blink{
+  50%{opacity:0;}
+}

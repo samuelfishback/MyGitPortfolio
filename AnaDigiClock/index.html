@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset=utf-8>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Digital Analog Clock by Fishbone</title>
+    <meta name="author" content="Sam Fishback">
+    <meta name="description" content="An analog clock with a digital one inside along with some options.">
+    <link rel="stylesheet" href="app.css">
+    <script defer src="app.js"></script>
+  </head>
+  <body class="all_around_centered">
+    <div id="outerContainer" class="all_around_centered">
+      <div id="outerCircle" class="all_around_centered">
+        <div id="innerCircle" class="all_around_centered">
+          <div id="mark9n3" class="cardinal_markings"></div>
+          <div id="mark12n6" class="cardinal_markings"></div>
+          <div id="mark1n7" class="ordinal_markings"></div>
+          <div id="mark2n8" class="ordinal_markings"></div>
+          <div id="mark4n10" class="ordinal_markings"></div>
+          <div id="mark5n11" class="ordinal_markings"></div>
+          <div id="numberCircle">
+            <div class="number_times" id="num1">
+              <span class="ordinal_numbers">1</span></div>
+            <div class="number_times" id="num2">
+              <span class="ordinal_numbers">2</span></div>
+            <div class="number_times" id="num3">
+              <span class="cardinal_numbers">3</span></div>
+            <div class="number_times" id="num4">
+              <span class="ordinal_numbers">4</span></div>
+            <div class="number_times" id="num5">
+              <span class="ordinal_numbers">5</span></div>
+            <div class="number_times" id="num6">
+              <span class="cardinal_numbers">6</span></div>
+            <div class="number_times" id="num7">
+              <span class="ordinal_numbers">7</span></div>
+            <div class="number_times" id="num8">
+              <span class="ordinal_numbers">8</span></div>
+            <div class="number_times" id="num9">
+              <span class="cardinal_numbers">9</span></div>
+            <div class="number_times" id="num10">
+              <span class="ordinal_numbers">10</span></div>
+            <div class="number_times" id="num11">
+              <span class="ordinal_numbers">11</span></div>
+            <div class="number_times" id="num12">
+              <span class="cardinal_numbers">12</span></div>
+            <div class="time_hands" id="timeHandsCenter"></div>
+            <div class="time_hands" id="minuteHand">
+            <svg viewbox="0 0 100 25">
+              <path
+              fill="#ddd"
+              stroke="none"
+              d="M 0,0
+                  Q 200,10 0,25"
+              />
+            </svg>
+            </div>
+            <div class="time_hands" id="hourHand">
+            <svg viewbox="0 0 75 25">
+              <path
+              fill="#ddd"
+              stroke="#444"
+              d="M 0,0
+                  Q 150,10 0,25"
+              />
+            </svg>
+            </div>
+            <div class="time_hands" id="secondHand"></div>
+            <div id="digitalContainer">
+              <div id="digitalContainerInner">
+                <span class="digital_times" id="digitalHour">00</span>
+                <span class="digital_times digital_colon">:</span>
+                <span class="digital_times" id="digitalMinute">00</span>
+                <span class="digital_times digital_colon">:</span>
+                <span class="digital_times" id="digitalSecond">00</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
