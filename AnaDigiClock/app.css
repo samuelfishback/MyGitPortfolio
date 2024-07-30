@@ -25,10 +25,14 @@ body{
     height:80vh;
   }
 }
+
+/* does not work well when set in portfolio page
 @media screen and
 (max-height:550px){
   :root{--general-size:calc(var(--device-size)*0.03);}
 }
+*/
+
 #outerCircle{
   width:98%;
   height:98%;
