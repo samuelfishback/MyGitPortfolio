@@ -34,7 +34,7 @@ function updateDigital(){
   let digitalHour = document.getElementById('digitalHour');
   digitalSecond.textContent = globalTimes.seconds < 10 ? '0' + globalTimes.seconds : globalTimes.seconds;
   digitalMinute.textContent = globalTimes.minutes < 10 ? '0' + globalTimes.minutes : globalTimes.minutes;
-  digitalHour.textContent = globalTimes.hours;
+  digitalHour.textContent = globalTimes.hours < 10 ? '0' + globalTimes.hours : globalTimes.hours;
 }
 
 window.onload = adjustFontSize;
