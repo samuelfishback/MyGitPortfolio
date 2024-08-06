@@ -21,6 +21,14 @@ body {
 }
 */
 
+.profilePics {
+  width: 30rem;
+  height: 30rem;
+  border-radius: 30%;
+  margin: 1vh;
+  align-self: center;
+}
+
 .projects-images {
   width: 30vw;
   height: auto;
@@ -137,20 +145,10 @@ body {
   padding: 1rem;
 }
 
-#myAboutMeParagraph {
-  font-size: 1.4rem;
-}
-
-#profilePic {
-  width: 20rem;
-  height: 20rem;
-  border-radius: 30%;
-  margin-top: 1vh;
-}
-
 #myProfile {
+  text-align: justify;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 #projectsContainer {
@@ -233,11 +231,22 @@ body {
 }
 
 @media screen and (min-width: 900px) {
+  .profilePics:first-of-type {
+    display: none;
+  }
   .projects-images {
     aspect-ratio: 2/3;
   }
+  #myProfile {
+    flex-direction: row;
+  }
+  .myAboutMeParagraph {
+    margin: 1vw;
+  }
   #profilePic {
-    margin-right: calc(100vw - 900px);
+    margin-right: 10vw;
+    /* kool code I can reference later
+    margin-right: calc(100vw - 900px); */
   }
   #myName {
     font-size: 7.2rem;
@@ -246,6 +255,9 @@ body {
 }
 
 @media screen and (max-width: 900px) {
+  .profilePics:last-of-type {
+    display: none;
+  }  
   .projects-images {
     width: 80%;
     align-self: center;
