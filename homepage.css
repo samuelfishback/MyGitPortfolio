@@ -2,6 +2,10 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
+strong {
+  color: rgb(100, 100, 255);
+}
+
 .wave-separator svg {
   overflow: hidden;
   background-color: #eef;
@@ -211,7 +215,7 @@ body {
 
 #emailContainer {
   display: flex;
-  width: 98%;
+  width: 95%;
   padding: 1rem;
   align-items: flex-end;
   justify-content: flex-end;
