@@ -6,6 +6,42 @@ strong {
   color: rgb(100, 100, 255);
 }
 
+/* these elements have id's and classes but I wanted to
+   practice using nth-child */
+ul {
+  list-style: none;
+  padding: 0;
+  z-index: 10;
+  border: 3px solid darkgrey;
+  height: 32rem;
+  width: 25vw;
+  position: relative;
+}
+
+li {
+  border: 5px solid black;
+  border-radius: 10%;
+  height: 32rem;
+  width: 25vw;
+  background-color: #eef;
+  position: absolute;
+}
+
+li:nth-child(1) {
+  top: 3rem;
+  z-index: 13;
+}
+
+li:nth-child(2) {
+  top: 2rem;
+  z-index: 12;
+}
+
+li:nth-child(3){
+  top: 1rem;
+  z-index: 11;
+}
+
 .wave-separator svg {
   overflow: hidden;
   background-color: #eef;
@@ -31,6 +67,10 @@ strong {
   border-radius: 30%;
   margin: 1vh;
   align-self: center;
+}
+
+.myAboutMeParagraphs {
+  margin: 2rem;
 }
 
 .projects-images {
@@ -235,6 +275,11 @@ strong {
 }
 
 @media screen and (min-width: 900px) {
+  /* may not be necessary after carousel */
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
   .profilePics:first-of-type {
     display: none;
   }
@@ -243,9 +288,6 @@ strong {
   }
   #myProfile {
     flex-direction: row;
-  }
-  .myAboutMeParagraph {
-    margin: 1vw;
   }
   #profilePic {
     margin-right: 10vw;
@@ -259,6 +301,9 @@ strong {
 }
 
 @media screen and (max-width: 900px) {
+  li {
+    width: 90vw;
+  }
   .profilePics:last-of-type {
     display: none;
   }  
