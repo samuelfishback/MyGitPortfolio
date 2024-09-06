@@ -16,7 +16,6 @@ ul {
   height: 32rem;
   width: 25vw;
   position: relative;
-  margin-bottom: ;
 }
 
 li {
@@ -33,12 +32,14 @@ li {
 
 @keyframes nextcard{
   50% {
-    transform: translate(0, -110%);
+    transform: translate(0, -115%);
     z-index: 13;
-    
   }
   60%, 100% {
     z-index: 10;
+  }
+  70% {
+    transform: translate(0, -115%) scale(0.9);
   }
   100% {
     transform: translate(0, -6rem) scale(0.8);
@@ -65,9 +66,8 @@ li:nth-child(3){
 
 .animation-playback {
   /* animation name, duration, timing, iteration, fill-mode */
-  animation: nextcard 2s ease 1 forwards;
+  animation: nextcard 2s ease-in-out 1 forwards;
 }
-
 
 .wave-separator svg {
   overflow: hidden;

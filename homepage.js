@@ -1,16 +1,22 @@
 const aboutMeSquare = document.getElementById('aboutMeSquare');
 const aboutMeUpArrow = document.getElementById('aboutMeUpArrow');
 const myAboutMeItems = document.getElementsByClassName('my-about-me-items');
+const aboutMeArray = Array.from(myAboutMeItems);
 
 function carouselUpArrow() {
   // translate property in css x:-50% to center card, however transform is a new property and can stack with translate
-  myAboutMeItems[0].classList.add('animation-playback');
+  aboutMeArray[0].classList.add('animation-playback');
+  aboutMeArray.push(aboutMeArray[0]);
+  aboutMeArray.shift();
+  // removes class before animation can play, need a better solution
+  // aboutMeArray[2].classList.remove('animation-playback');
 }
 
-// TESTING
+//---------------- TESTING function ------------------
 function checkClassArray() {
-  console.log(myAboutMeItems.length);
-  console.log(myAboutMeItems[0].classList);
+  for(let i=0;i<aboutMeArray.length;i++) {
+    console.log(aboutMeArray[i].getAttribute('value'));
+  }
 }
 
 aboutMeUpArrow.addEventListener('click', carouselUpArrow);
