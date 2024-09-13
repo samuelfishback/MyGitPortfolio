@@ -11,8 +11,6 @@ strong {
 ul {
   list-style: none;
   padding: 0;
-  z-index: 10;
-  border: 3px solid darkgrey;
   height: 32rem;
   width: 25vw;
   position: relative;
@@ -46,6 +44,12 @@ li {
   }
 }
 
+@keyframes moveup{
+  100% {
+    transform: scale(1.0);
+  }
+}
+
 li:nth-child(1) {
   top: 3rem;
   z-index: 13;
@@ -53,20 +57,24 @@ li:nth-child(1) {
 }
 
 li:nth-child(2) {
-  top: 2rem;
+  top: 0rem;
   z-index: 12;
-  zoom: 90%;
+  transform: scale(0.9);
 }
 
 li:nth-child(3){
-  top: 1rem;
+  top: -3rem;
   z-index: 11;
-  zoom: 80%;
+  transform: scale(0.8);
 }
 
 .animation-playback {
-  /* animation name, duration, timing, iteration, fill-mode */
+  /* animation name, duration, timing, delay, iteration, fill-mode */
   animation: nextcard 2s ease-in-out 1 forwards;
+}
+
+.animation-playforward {
+  animation: moveup 1s ease 1s 1 forwards;
 }
 
 .wave-separator svg {

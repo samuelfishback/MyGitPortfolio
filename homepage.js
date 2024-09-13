@@ -8,8 +8,12 @@ function carouselUpArrow() {
   aboutMeArray[0].classList.add('animation-playback');
   aboutMeArray.push(aboutMeArray[0]);
   aboutMeArray.shift();
-  // removes class before animation can play, need a better solution
-  // aboutMeArray[2].classList.remove('animation-playback');
+  /* 
+  removes class before animation can play, need a better solution
+  aboutMeArray[0].classList.remove('animation-playback');
+  aboutMeArray[1].classList.remove('animation-playback');
+  aboutMeArray[2].classList.remove('animation-playback');
+  */
 }
 
 //---------------- TESTING function ------------------
