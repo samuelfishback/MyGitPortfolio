@@ -8,6 +8,8 @@ function carouselUpArrow() {
   aboutMeArray[0].classList.add('animation-playback');
   aboutMeArray.push(aboutMeArray[0]);
   aboutMeArray.shift();
+  aboutMeArray[0].classList.add('animation-playforward');
+  aboutMeArray[1].classList.add('animation-playmiddle');
   /* 
   removes class before animation can play, need a better solution
   aboutMeArray[0].classList.remove('animation-playback');

@@ -45,8 +45,22 @@ li {
 }
 
 @keyframes moveup{
+  90% {
+    z-index: 12;
+  }
   100% {
-    transform: scale(1.0);
+    transform: translate(0, 3rem) scale(1.0);
+    z-index: 13;
+  }
+}
+
+@keyframes movemiddle{
+  90% {
+    z-index: 11;
+  }
+  100% {
+    transform: translate(0, 3rem) scale(0.9);
+    z-index: 12;
   }
 }
 
@@ -74,7 +88,11 @@ li:nth-child(3){
 }
 
 .animation-playforward {
-  animation: moveup 1s ease 1s 1 forwards;
+  animation: moveup 1s ease 0.75s 1 forwards;
+}
+
+.animation-playmiddle {
+  animation: movemiddle 1s ease 1.25s 1 forwards;
 }
 
 .wave-separator svg {
