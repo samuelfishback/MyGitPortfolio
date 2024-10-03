@@ -10,20 +10,27 @@ function carouselUpArrow() {
   aboutMeArray.shift();
   aboutMeArray[0].classList.add('animation-playforward');
   aboutMeArray[1].classList.add('animation-playmiddle');
-  /* 
-  removes class before animation can play, need a better solution
-  aboutMeArray[0].classList.remove('animation-playback');
-  aboutMeArray[1].classList.remove('animation-playback');
-  aboutMeArray[2].classList.remove('animation-playback');
-  */
+}
+
+/* A function that should work if eventListener is placed on a good element 
+   Maybe use a setTimeout(function, seconds) event instead*/
+function removeAnimations() {
+  for(let i=0;i<aboutMeArray.length;i++) {
+    aboutMeArray[i].classList.remove('animation-playforward', 'animation-playmiddle', 'animation-playback');
+  }
 }
 
 //---------------- TESTING function ------------------
 function checkClassArray() {
   for(let i=0;i<aboutMeArray.length;i++) {
     console.log(aboutMeArray[i].getAttribute('value'));
+    console.log(aboutMeArray[i].classList);
   }
 }
 
 aboutMeUpArrow.addEventListener('click', carouselUpArrow);
 aboutMeSquare.addEventListener('click', checkClassArray);
+/* not logging; maybe because element is changing position in array. need better action */
+aboutMeArray[2].addEventListener('animationEnd', function() {
+  console.log('End');
+});
