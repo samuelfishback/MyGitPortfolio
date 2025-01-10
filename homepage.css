@@ -374,7 +374,9 @@ li {
   }
 }
 
-@media screen and (min-width: 900px)
+/* NEEDS FIX */
+@media screen and (device-width: 360px)
+  and (device-width: 320px)
   and (orientation: landscape) {
     ul, li {
       width: 50vw;
