@@ -374,6 +374,13 @@ li {
   }
 }
 
+@media screen and (min-width: 900px)
+  and (orientation: landscape) {
+    ul, li {
+      width: 50vw;
+    }
+  }
+
 @media screen and (max-width: 900px) {
   ul, li {
     width: 90vw;
