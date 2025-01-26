@@ -11,6 +11,7 @@ TODO:
   * When variable reaches 3 and cards are in orginal positions, reset variable and remove anim classes.
 */
 
+// Starts at zero on page load. After three, resets to one, not zero
 function carouselIncrement() {
   if (buttonPresses < 3) {buttonPresses++;}
   else {
@@ -63,4 +64,3 @@ aboutMeSquare.addEventListener('click', function() {
   console.log(buttonPresses);
   checkClassArray();
 });
-/* not logging; maybe because element is changing position in array. need better action */

@@ -374,7 +374,7 @@ li {
   }
 }
 
-/* NEEDS FIX */
+/* NEEDS FIX  because landscape on phone breaks portfolio cards text*/
 @media screen and (device-width: 360px)
   and (device-width: 320px)
   and (orientation: landscape) {
