@@ -66,7 +66,7 @@ function removeAnimations(index) {
   if (index == 1) indexArr = [[1,'13'], [2,'12'], [0,'10']];
   if (index == 2) indexArr = [[2,'13'], [0,'12'], [1,'10']];
 
-  let currentPositions = ["translate(0, 3rem) scale(1.0)", "translate(0, 3rem) scale(0.9)", "translate(0, -3rem) scale(0.8)"];
+  let currentPositions = ["translate(0, 0) scale(1.0)", "translate(0, 0) scale(0.9)", "translate(0, 0) scale(0.8)"];
 
   for(let i=0;i<aboutMeArray.length;i++) {
     //set the boxes with their current positions before the animation in order to prevent a reset and enable a smooth transition from the current to the next position
