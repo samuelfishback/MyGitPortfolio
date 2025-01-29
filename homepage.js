@@ -73,7 +73,6 @@ function removeAnimations(index) {
     aboutMeArray[indexArr[i][0]].style.transform=`${currentPositions[i]}`
     //set the curent box with the proper z index for visibility.
     aboutMeArray[indexArr[i][0]].style.zIndex=`${indexArr[i][1]}`
-    console.log(aboutMeArray[indexArr[i][0]].style.transform);
 
     aboutMeArray[i].classList.remove('animation-playforward', 'animation-playmiddle', 'animation-playback');
     //console.log("removed", indexArr[i][0])
