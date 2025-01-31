@@ -9,6 +9,7 @@ TODO:
   * add function for keeping time and animation duration
   * create function for ease out formula
   * create function for moving boxes (animation)
+  * remove animation classes from css
 */
 
 // Starts at zero on page load. After three, resets to one, not zero
