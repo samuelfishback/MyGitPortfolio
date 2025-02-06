@@ -9,6 +9,7 @@ strong {
 /* these elements have id's and classes but I wanted to
    practice using nth-child */
 /* done using nth-child, need to use id's in order to add and remove classes at specific times */
+
 ul {
   list-style: none;
   padding: 0;
@@ -29,43 +30,6 @@ li {
   padding: 1rem;
 }
 
-@keyframes nextcard{
-  50% {
-    transform: translate(0, -115%) scale(1.0);
-    z-index: 13;
-  }
-  60%, 100% {
-    z-index: 10;
-  }
-  70% {
-    transform: translate(0, -115%) scale(0.9);
-  }
-  100% {
-    transform: translate(0, -6rem) scale(0.8);
-  }
-}
-
-@keyframes moveup{
-  0% {
-    transform: translate(0, 0) scale(0.9);
-    z-index: 12;
-  }
-  100% {
-    transform: translate(0, 3rem) scale(1.0);
-    z-index: 13;
-  }
-}
-
-@keyframes movemiddle{
-  90% {
-    z-index: 11;
-  }
-  100% {
-    transform: translate(0, 3rem) scale(0.9);
-    z-index: 12;
-  }
-}
-
 #first-card {
   top: 3rem;
   z-index: 13;
@@ -82,19 +46,6 @@ li {
   top: -3rem;
   z-index: 11;
   transform: scale(0.8);
-}
-
-.animation-playback {
-  /* animation name, duration, timing, delay, iteration, fill-mode */
-  animation: nextcard 2s ease-in-out 1 forwards;
-}
-
-.animation-playforward {
-  animation: moveup 1s ease 0.75s 1 forwards;
-}
-
-.animation-playmiddle {
-  animation: movemiddle 1s ease 1.25s 1 forwards;
 }
 
 .wave-separator svg {
