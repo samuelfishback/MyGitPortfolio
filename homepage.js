@@ -6,9 +6,7 @@ var buttonPresses = 0;
 
 /* 
 TODO: 
-  * Create variable that increments whenever carouselUpArrow is called.
-  * Place class add into switch statements to go through each array element (there is a better way but i dont know it yet)
-  * When variable reaches 3 and cards are in orginal positions, reset variable and remove anim classes.
+  * alter currentPositions with each index change to change translations to current coords. this should fix the 'jumping' we see after the first anim.
 */
 
 function carouselIncrement() {
@@ -25,8 +23,6 @@ function carouselIncrement() {
 function carouselUpArrow() {
   switch (buttonPresses) {
   // translate property in css x:-50% to center card, however transform is a new property and can stack with translate
-
-
     case 0:
       //remove the current animation to prevent the positions of the boxes from resetting before applying the animation which roughens the transition
       removeAnimations(2)
@@ -37,14 +33,8 @@ function carouselUpArrow() {
     case 1:
       removeAnimations(0)
       aboutMeArray[0].classList.add('animation-playback');
-  /* this is fun and great but not functional for this task
-  aboutMeArray.push(aboutMeArray[0]);
-  aboutMeArray.shift();
-  */
       aboutMeArray[1].classList.add('animation-playforward');
       aboutMeArray[2].classList.add('animation-playmiddle');
-  // removing animations resets positions but not Array index because anim are set in classes
-     //setTimeout(()=> removeAnimations(1), 2000);
       break;
     case 2:
       removeAnimations(1)
@@ -55,8 +45,6 @@ function carouselUpArrow() {
   }
 }
 
-/* A function that should work if eventListener is placed on a good element 
-   Maybe use a setTimeout(function, seconds) event instead*/
 function removeAnimations(index) {
   //initialize a variable of array for holding the current box(s) index before animation
   let indexArr;
@@ -75,8 +63,6 @@ function removeAnimations(index) {
     aboutMeArray[indexArr[i][0]].style.zIndex=`${indexArr[i][1]}`
 
     aboutMeArray[i].classList.remove('animation-playforward', 'animation-playmiddle', 'animation-playback');
-    //console.log("removed", indexArr[i][0])
-    //console.log(indexArr)
   }
 }
 
@@ -89,9 +75,7 @@ function checkClassArray() {
 }
 
 aboutMeUpArrow.addEventListener('click', carouselIncrement);
-//aboutMeUpArrow.addEventListener('click', carouselUpArrow);
 aboutMeSquare.addEventListener('click', function() {
   console.log(buttonPresses);
   checkClassArray();
 });
-/* not logging; maybe because element is changing position in array. need better action */
