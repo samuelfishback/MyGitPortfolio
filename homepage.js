@@ -48,19 +48,28 @@ function carouselUpArrow() {
 function removeAnimations(index) {
   //initialize a variable of array for holding the current box(s) index before animation
   let indexArr;
+  let currentPositions;
   //Here is a little bit tricky but the array of arrays repurposes the array according to the current visible box index, so as to be able to set styles of the boxes in index order
   //the first value in the array of each of the outer array items is the element index while the second value is the z index it will hold
-  if (index == 0) indexArr = [[0,'13'], [1,'12'], [2,'10']];
-  if (index == 1) indexArr = [[1,'13'], [2,'12'], [0,'10']];
-  if (index == 2) indexArr = [[2,'13'], [0,'12'], [1,'10']];
-
-  let currentPositions = ["translate(0, 0) scale(1.0)", "translate(0, 0) scale(0.9)", "translate(0, 0) scale(0.8)"];
+  if (index == 0) {
+    indexArr = [[0,'13'], [1,'12'], [2,'10']];
+    currentPositions = ["translate(0, 0) scale(1.0)", "translate(0, 0) scale(0.9)", "translate(0, 0) scale(0.8)"];
+  }
+  if (index == 1) {
+    indexArr = [[1,'13'], [2,'12'], [0,'10']];
+    currentPositions = ["translate(0, 3rem) scale(1.0)", "translate(0, 3rem) scale(0.9)", "translate(0, -6rem) scale(0.8)"];
+  }
+  if (index == 2) {
+    indexArr = [[2,'13'], [0,'12'], [1,'10']];
+    currentPositions = ["translate(0, 0) scale(1.0)", "translate(0, 0rem) scale(0.9)", "translate(0, 0) scale(0.8)"];
+  }
 
   for(let i=0;i<aboutMeArray.length;i++) {
     //set the boxes with their current positions before the animation in order to prevent a reset and enable a smooth transition from the current to the next position
     aboutMeArray[indexArr[i][0]].style.transform=`${currentPositions[i]}`
     //set the curent box with the proper z index for visibility.
     aboutMeArray[indexArr[i][0]].style.zIndex=`${indexArr[i][1]}`
+    console.log(aboutMeArray[indexArr[i][0]].style.transform);
 
     aboutMeArray[i].classList.remove('animation-playforward', 'animation-playmiddle', 'animation-playback');
   }
