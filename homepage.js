@@ -29,18 +29,27 @@ function carouselUpArrow() {
       aboutMeArray[0].classList.add('animation-playforward');
       aboutMeArray[1].classList.add('animation-playmiddle');
       aboutMeArray[2].classList.add('animation-playback');
+      aboutMeArray[2].style.top = "3rem";
+      aboutMeArray[0].style.top = "0rem";
+      aboutMeArray[1].style.top = "-3rem";
       break;
     case 1:
       removeAnimations(0)
       aboutMeArray[0].classList.add('animation-playback');
       aboutMeArray[1].classList.add('animation-playforward');
       aboutMeArray[2].classList.add('animation-playmiddle');
+      aboutMeArray[0].style.top = "3rem";
+      aboutMeArray[1].style.top = "0rem";
+      aboutMeArray[2].style.top = "-3rem";
       break;
     case 2:
       removeAnimations(1)
       aboutMeArray[0].classList.add('animation-playmiddle');
       aboutMeArray[1].classList.add('animation-playback');
       aboutMeArray[2].classList.add('animation-playforward');
+      aboutMeArray[1].style.top = "3rem";
+      aboutMeArray[2].style.top = "0rem";
+      aboutMeArray[0].style.top = "-3rem";
       break;
   }
 }
@@ -48,20 +57,17 @@ function carouselUpArrow() {
 function removeAnimations(index) {
   //initialize a variable of array for holding the current box(s) index before animation
   let indexArr;
-  let currentPositions;
+  let currentPositions = ["translate(0, 0) scale(1.0)", "translate(0, 0rem) scale(0.9)", "translate(0, 0) scale(0.8)"];
   //Here is a little bit tricky but the array of arrays repurposes the array according to the current visible box index, so as to be able to set styles of the boxes in index order
   //the first value in the array of each of the outer array items is the element index while the second value is the z index it will hold
   if (index == 0) {
     indexArr = [[0,'13'], [1,'12'], [2,'10']];
-    currentPositions = ["translate(0, 0) scale(1.0)", "translate(0, 0) scale(0.9)", "translate(0, 0) scale(0.8)"];
   }
   if (index == 1) {
     indexArr = [[1,'13'], [2,'12'], [0,'10']];
-    currentPositions = ["translate(0, 3rem) scale(1.0)", "translate(0, 3rem) scale(0.9)", "translate(0, -6rem) scale(0.8)"];
   }
   if (index == 2) {
     indexArr = [[2,'13'], [0,'12'], [1,'10']];
-    currentPositions = ["translate(0, 0) scale(1.0)", "translate(0, 0rem) scale(0.9)", "translate(0, 0) scale(0.8)"];
   }
 
   for(let i=0;i<aboutMeArray.length;i++) {
