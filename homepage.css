@@ -244,16 +244,6 @@ li {
   padding: 1rem;
 }
 
-#aboutMeSquare {
-  border-top: 2rem solid grey;
-  width: 2rem;
-  background: none;
-  position: absolute;
-  bottom: -1rem;
-  right: 55%;
-  z-index: 20;
-}
-
 #aboutMeUpArrow {
   border-bottom: 2rem solid grey;
   border-right: 1rem solid transparent;
@@ -261,8 +251,8 @@ li {
   background: none;
   position: absolute;
   bottom: -1rem;
-  left: 55%;
-  z-index: 20;
+  left: 45%;
+  z-index: 15;
 }
 
 #myProfile {
@@ -373,10 +363,8 @@ li {
   }
 }
 
-/* NEEDS FIX  because landscape on phone breaks portfolio cards text*/
-@media screen and (device-width: 360px)
-  and (device-width: 320px)
-  and (orientation: landscape) {
+@media screen and (min-width: 900px)
+  and (max-width: 1250px) {
     ul, li {
       width: 50vw;
     }

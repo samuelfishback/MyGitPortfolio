@@ -1,4 +1,4 @@
-const aboutMeSquare = document.getElementById('aboutMeSquare');
+
 const aboutMeUpArrow = document.getElementById('aboutMeUpArrow');
 const myAboutMeItems = document.getElementsByClassName('my-about-me-items');
 const aboutMeArray = Array.from(myAboutMeItems);
@@ -90,7 +90,3 @@ function checkClassArray() {
 }
 
 aboutMeUpArrow.addEventListener('click', carouselIncrement);
-aboutMeSquare.addEventListener('click', function() {
-  console.log(buttonPresses);
-  checkClassArray();
-});
