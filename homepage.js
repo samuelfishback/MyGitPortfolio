@@ -3,7 +3,12 @@ const aboutMeUpArrow = document.getElementById('aboutMeUpArrow');
 const myAboutMeItems = document.getElementsByClassName('my-about-me-items');
 const aboutMeArray = Array.from(myAboutMeItems);
 var buttonPresses = 0;
-
+let positions = 
+  [
+    {top: '3rem', z-index: '13', transform: 'scale(1.0)'},
+    {top: '0rem', z-index: '12', transform: 'scale(0.9)'},
+    {top: '-3rem', z-index: '11', transform: 'scale(0.8)'}
+  ];
 /* 
 TODO: 
   * add function for keeping time and animation duration
