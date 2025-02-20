@@ -9,12 +9,18 @@ let positions =
     {top: '0rem', z-index: '12', transform: 'scale(0.9)'},
     {top: '-3rem', z-index: '11', transform: 'scale(0.8)'}
   ];
+  
+function easeInOutQuad(t) {
+    return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+}
+
+let animationDuration = 500; //in miliseconds
 /* 
 TODO: 
   * add function for keeping time and animation duration
-  * create function for ease out formula
+  ✓ create function for ease out formula
   * create function for moving boxes (animation)
-  * remove animation classes from css
+  ✓ remove animation classes from css
 */
 
 // Starts at zero on page load. After three, resets to one, not zero
