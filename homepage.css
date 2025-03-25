@@ -29,19 +29,19 @@ li {
   padding: 1rem;
 }
 
-#first-card {
+#firstCard {
   top: 3rem;
   z-index: 13;
   transform: scale(1.0);
 }
 
-#second-card {
+#secondCard {
   top: 0rem;
   z-index: 12;
   transform: scale(0.9);
 }
 
-#third-card {
+#thirdCard {
   top: -3rem;
   z-index: 11;
   transform: scale(0.8);
@@ -306,6 +306,9 @@ li {
   ul {
     display: flex;
     flex-direction: row;
+  }
+  ul, li {
+	width: 50vw;
   }
   .profilePics:first-of-type {
     display: none;
