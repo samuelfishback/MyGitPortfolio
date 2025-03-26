@@ -3,7 +3,9 @@ const aboutMeUpArrow = document.getElementById('aboutMeUpArrow');
 const myAboutMeItems = document.getElementsByClassName('my-about-me-items');
 const aboutMeArray = Array.from(myAboutMeItems);
 const firstCard = document.getElementById('firstCard'); // remove after test
+firstCard.style.top = '3rem';
 var buttonPresses = 0;
+let frontCardPosition = '-34rem';
 let positions = 
   [
     {top: '3rem', zIndex: '13', transform: 'scale(1.0)'},
@@ -24,7 +26,25 @@ TODO:
   ✓ remove animation classes from css
 */
 
-// Starts at zero on page load. After three, resets to one, not zero
+function animateFrontCard() {
+	const startTime = performance.now();
+	const startPosition = parseInt(firstCard.style.top);
+	const endPosition = parseInt(frontCardPosition);
+	
+	function animationStep(currentTime){
+		const elapsed = currentTime - startTime;
+		const t = Math.min(elapsed / 1000, 1);
+		const easingT = easeInOutQuad(t);
+		
+		firstCard.style.top = startPosition + (endPosition - startPosition) * easingT + 'rem';
+		
+		if (t < 1) {
+			requestAnimationFrame(animationStep);
+		}
+	}
+	requestAnimationFrame(animationStep);
+}
+
 function carouselIncrement() {
   buttonPresses < 2 ? buttonPresses++ : buttonPresses = 0;
 }
@@ -58,16 +78,13 @@ function animateCards(myItem, endPosition, duration){
   requestAnimationFrame(animationStep); // start animation	
 }
 
+
 //---------------- TESTING function ------------------
-function checkClassArray() {
-  for(let i=0;i<aboutMeArray.length;i++) {
-    console.log(aboutMeArray[i].getAttribute('value'));
-    console.log(aboutMeArray[i].classList);
-  }
-}
+
 //----------------------------------------------------
 
-aboutMeUpArrow.addEventListener('click', carouselUpArrow);
+aboutMeUpArrow.addEventListener('click', animateFrontCard);
+
 aboutMeSquare.addEventListener('click', function() {
   console.log(buttonPresses);
 	console.log(firstCard.style.top);
