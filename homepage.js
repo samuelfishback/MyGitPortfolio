@@ -29,26 +29,42 @@ TODO:
 function animateFrontCard() {
 	const startTime = performance.now();
 	const startPosition = parseInt(firstCard.style.top);
-	const endPosition = parseInt(frontCardPosition);
+	let endPosition = parseInt(frontCardPosition);
 	
-	function animationStep(currentTime){
+	function animationFirstStep(currentTime){
 		const elapsed = currentTime - startTime;
 		const t = Math.min(elapsed / 1000, 1);
+		// the miliseconds for the animation to finish
 		const easingT = easeInOutQuad(t);
 		
 		firstCard.style.top = startPosition + (endPosition - startPosition) * easingT + 'rem';
 		
 		if (t < 1) {
-			requestAnimationFrame(animationStep);
+			requestAnimationFrame(animationFirstStep);
 		}
 	}
-	requestAnimationFrame(animationStep);
+	
+	function animationSecondStep(currentTime) {
+		const elapsed = currentTime - startTime;
+		const t = Math.min(elapsed / 500, 1);
+		const easingT = easeInOutQuad(t);
+		
+		endPosition = parseInt(startPosition) - 3;
+		firstCard.style.top = startPosition + (endPosition - startPosition) * easingT + 'rem';
+		
+		if (t < 1) {
+			requestAnimationFrame(animationSecondStep);
+		}
+	}
+	requestAnimationFrame(animationFirstStep);
+	requestAnimationFrame(animationSecondStep);
 }
 
 function carouselIncrement() {
   buttonPresses < 2 ? buttonPresses++ : buttonPresses = 0;
 }
 
+// unused until first card is complete
 function carouselUpArrow() {
   animateCards(firstCard, positions[buttonPresses], animationDuration);
 	carouselIncrement();
