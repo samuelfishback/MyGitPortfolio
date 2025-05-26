@@ -22,6 +22,14 @@ canvas {
   /* height is handled in javascript */
 }
 
+#playerSprite {
+	display: none;
+}
+
+#platformSprite {
+	display: none;
+}
+
 button {
   display: inline-block;
   position: relative;

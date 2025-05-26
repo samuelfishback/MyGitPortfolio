@@ -54,11 +54,13 @@ class Player {
         };
         this.hasJumped = false;
         this.isScrolling = false;
+				this.image = document.getElementById('playerSprite');
     }
 
     draw() {
         ctx.fillStyle = 'red';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+				ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
     }
     update() {
         this.draw();
@@ -82,12 +84,14 @@ class Platform {
 
         this.width = 100 + isPlusOrMinus() * Math.floor(Math.random() * 50);
         this.height = 100 / (1.618 * 5);
+				this.image = document.getElementById('platformSprite');
     }
     
     draw() {
         // drawPlatform();
         ctx.fillStyle = 'blue';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+				ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
     }
 }
 
@@ -130,7 +134,6 @@ function animate() {
 
     // player movement & borders
     // player & background scroll
-    // FIXED: change this to a vertical scroll rather than a horizontal one & change velocity back to 10
     if (keys.right.isPressed && player.position.x + player.width < canvas.width) {
         player.velocity.x = 5;
     } else if (keys.left.isPressed && player.position.x > 0) {
@@ -341,12 +344,13 @@ class Platform {
         
         this.width = 100 + isPlusOrMinus() * Math.floor(Math.random() * 50);
         this.height = 200 / (1.618 * 5);
+				this.image = document.getElementById('platformSprite');
     }
     
     draw() {
-        // drawPlatform();
         ctx.fillStyle = 'blue';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+				ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
     }
 }
 
@@ -379,6 +383,7 @@ class Player {
             right: false
         };
         this.isScrolling = false;
+				this.image = document.getElementById('playerSprite');
     }
 
     move() {
@@ -404,6 +409,7 @@ class Player {
     draw() {
         ctx.fillStyle = 'red';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
+				ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
     }
     update() {
         this.draw();
