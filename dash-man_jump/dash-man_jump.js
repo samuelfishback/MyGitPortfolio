@@ -58,7 +58,7 @@ class Player {
     }
 
     draw() {
-        ctx.fillStyle = 'red';
+        ctx.fillStyle = 'transparent';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
 				ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
     }
@@ -407,7 +407,7 @@ class Player {
     }
 
     draw() {
-        ctx.fillStyle = 'red';
+        ctx.fillStyle = 'transparent';
         ctx.fillRect(this.position.x, this.position.y, this.width, this.height);
 				ctx.drawImage(this.image, this.position.x, this.position.y, this.width, this.height);
     }
