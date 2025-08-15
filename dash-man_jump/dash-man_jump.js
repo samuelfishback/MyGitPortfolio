@@ -193,17 +193,17 @@ animate();
 window.addEventListener('keydown', ({keyCode}) => {
     console.log(keyCode);
     switch (true) {
-        case keyCode==65 || keyCode==37:
+        case keyCode==65 || keyCode==37: //a or leftArrow
             console.log('left');
             keys.right.isPressed = false;
             keys.left.isPressed = true;
             break;
-        case keyCode==68 || keyCode==39:
+        case keyCode==68 || keyCode==39: //d or rightArrow
             console.log('right');
             keys.left.isPressed = false;
             keys.right.isPressed = true;
             break;
-        case keyCode==87 || keyCode==38:
+        case keyCode==87 || keyCode==38: //w or upArrow
             console.log('up');
             keys.up.isPressed = true;
             if (!player.hasJumped) {
@@ -211,18 +211,18 @@ window.addEventListener('keydown', ({keyCode}) => {
                 player.hasJumped = true;
             }
             break;
-        case keyCode==83 || keyCode==40:
+        case keyCode==83 || keyCode==40: //s or downArrow
             console.log('down');
             keys.down.isPressed = true;
             break;
-        case keyCode==16:
+        case keyCode==16: //leftShift
             console.log('shift');
             keys.shift.isPressed = true;
             break;
-        case keyCode==32:
+        case keyCode==32: //space
             console.log(`x: ${player.position.x} \n y: ${player.position.y}`);
             break;
-        case keyCode==13:
+        case keyCode==13: //enter
             console.log('scrollOffset: ' + scrollOffset);
             console.log('platforms: ' + platforms.length);
             break;
@@ -403,7 +403,7 @@ class Player {
             } else this.direction.up = false;
         } else this.velocity.y += 1;
         
-    // -------------------------------------------scroll mechanics TODO:
+    // -------------------------------------------scroll mechanics
     }
 
     draw() {
@@ -568,6 +568,92 @@ jumpButton.addEventListener('touchstart', () => {
 });
 jumpButton.addEventListener('touchend', () => {
     player.direction.up = false;
+});
+
+const keys = {
+    right: {
+        isPressed: false
+    },
+    left: {
+        isPressed: false
+    },
+    up: {
+        isPressed: false
+    },
+    down: {
+        isPressed: false
+    },
+    shift: {
+        isPressed: false
+    }
+}
+
+window.addEventListener('keydown', ({keyCode}) => {
+    console.log(keyCode);
+    switch (true) {
+        case keyCode==65 || keyCode==37: //a or leftArrow
+            console.log('left');
+            keys.right.isPressed = false;
+            keys.left.isPressed = true;
+            break;
+        case keyCode==68 || keyCode==39: //d or rightArrow
+            console.log('right');
+            keys.left.isPressed = false;
+            keys.right.isPressed = true;
+            break;
+        case keyCode==87 || keyCode==38: //w or upArrow
+            console.log('up');
+            keys.up.isPressed = true;
+            if (!player.hasJumped) {
+                player.velocity.y = -10;
+                player.hasJumped = true;
+            }
+            break;
+        case keyCode==83 || keyCode==40: //s or downArrow
+            console.log('down');
+            keys.down.isPressed = true;
+            break;
+        case keyCode==16: //leftShift
+            console.log('shift');
+            keys.shift.isPressed = true;
+            break;
+        case keyCode==32: //space
+            console.log(`x: ${player.position.x} \n y: ${player.position.y}`);
+            break;
+        case keyCode==13: //enter
+            console.log('scrollOffset: ' + scrollOffset);
+            console.log('platforms: ' + platforms.length);
+            break;
+    }
+});
+window.addEventListener('keyup', ({keyCode}) => {
+    switch (true) {
+        case keyCode==65 || keyCode==37:
+            keys.left.isPressed = false;
+            break;
+        case keyCode==68 || keyCode==39:
+            keys.right.isPressed = false;
+            break;
+        case keyCode==87 || keyCode==38 || keyCode==32:
+            keys.up.isPressed = false;
+            if (player.velocity.y <= 0) {
+                let counter = 0;
+                const i = setInterval(function(){
+                    player.velocity.y = 0;
+                    counter++;
+                    if(counter === 2) {
+                        clearInterval(i);
+                    }
+                }, 17);
+            }
+            break;
+        case keyCode==83 || keyCode==40:
+            keys.down.isPressed = false;
+            break;
+        case keyCode==16:
+            keys.shift.isPressed = false;
+            break;
+        }
 });
 
 }}
