@@ -5,7 +5,7 @@ const aboutMeArray = Array.from(myAboutMeItems);
 const firstCard = document.getElementById('firstCard'); // remove after test
 firstCard.style.top = '3rem';
 var buttonPresses = 0;
-let frontCardPosition = '-34rem';
+let frontCardPosition = '-32rem';
 let positions = 
   [
     {top: '3rem', zIndex: '13', transform: 'scale(1.0)'},
@@ -20,7 +20,7 @@ function easeInOutQuad(t) {
 let animationDuration = 500; //in miliseconds
 /* 
 TODO: 
-  * add function for keeping time and animation duration
+  ✓ add function for keeping time and animation duration
   ✓ create function for ease out formula
   * create function for moving boxes (animation)
   ✓ remove animation classes from css
@@ -49,7 +49,8 @@ function animateFrontCard() {
 		const t = Math.min(elapsed / 500, 1);
 		const easingT = easeInOutQuad(t);
 		
-		endPosition = parseInt(startPosition) - 3;
+		//changing subtrahend changes entire animation height
+		endPosition = parseInt(startPosition) - 0;
 		firstCard.style.top = startPosition + (endPosition - startPosition) * easingT + 'rem';
 		
 		if (t < 1) {
@@ -57,7 +58,7 @@ function animateFrontCard() {
 		}
 	}
 	requestAnimationFrame(animationFirstStep);
-	requestAnimationFrame(animationSecondStep);
+	//requestAnimationFrame(animationSecondStep);
 }
 
 function carouselIncrement() {
