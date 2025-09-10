@@ -594,7 +594,9 @@ window.addEventListener('keydown', ({keyCode}) => {
         case keyCode==65 || keyCode==37: //a or leftArrow
             console.log('left');
             keys.right.isPressed = false;
+						player.direction.right = false;
             keys.left.isPressed = true;
+						player.direction.left = true;
             break;
         case keyCode==68 || keyCode==39: //d or rightArrow
             console.log('right');
@@ -630,6 +632,7 @@ window.addEventListener('keyup', ({keyCode}) => {
     switch (true) {
         case keyCode==65 || keyCode==37:
             keys.left.isPressed = false;
+						player.direction.left = false;
             break;
         case keyCode==68 || keyCode==39:
             keys.right.isPressed = false;
